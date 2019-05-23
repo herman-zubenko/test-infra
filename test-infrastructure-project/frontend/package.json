@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "http-server",
+        "build-frontend-container": "docker build --no-cache -t todo-app:edge .",
+        "start-frontend-container": "docker run --rm --name todo-app -d --privileged -p 8080:8080 todo-app:edge",
+        "stop-frontent-container": "docker rm -f todo-app || true"
+
+    },
+    "dependencies": {
+        "director": "^1.2.0",
+        "vue": "^2.1.8",
+        "todomvc-common": "^1.0.1",
+        "todomvc-app-css": "^2.0.0",
+        "http-server": "0.11.1"
+    }
+}
